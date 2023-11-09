@@ -1,5 +1,7 @@
+require("./mongoDB");
 import express from "express";
 import favouritesRouter from "./routes/favourites";
+import config from "./utils/config";
 
 const app = express();
 const cors = require("cors");
@@ -7,14 +9,12 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3000;
-
 app.get("/", (_req, res) => {
   res.send("NodeJS + Express + Typescript App Up Weather app! 👍");
 });
 
 app.use("/api/favourites", favouritesRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server running on port http://localhost:${PORT}`);
+app.listen(config.PORT, () => {
+  console.log(`Server running on port http://localhost:${config.PORT}`);
 });
