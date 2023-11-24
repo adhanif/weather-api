@@ -1,7 +1,9 @@
 import express from "express";
-const favouritesRouter = express.Router();
 
-favouritesRouter.get("/", (_req, res) => {
+export const getFavourites = async (
+  req: express.Request,
+  res: express.Response
+) => {
   try {
     res.json("It is favourites route");
   } catch (error: unknown) {
@@ -11,6 +13,4 @@ favouritesRouter.get("/", (_req, res) => {
     }
     res.status(400).send({ error: errorMessage });
   }
-});
-
-export default favouritesRouter;
+};
