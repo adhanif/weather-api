@@ -20,7 +20,7 @@ app.get("/", (_req, res) => {
   res.send("NodeJS + Express + Typescript App Up Weather app! 👍");
 });
 
-app.use("/api/weather", favouritesRouter);
+app.use("/api/weather/favourites", favouritesRouter);
 
 app.listen(config.PORT, () => {
   console.log(`Server running on port http://localhost:${config.PORT}`);
