@@ -10,7 +10,10 @@ export const addFavourites = async (
     const { id } = (req as any).user;
 
     // console.log(cityname, id);
-    const alreadyFavourite = await Favourites.findOne({ cityname });
+    const alreadyFavourite = await Favourites.findOne({
+      cityname,
+      creater: id,
+    });
 
     if (!alreadyFavourite) {
       const newFavourite = await Favourites.create({ cityname, creater: id });
@@ -50,18 +53,15 @@ export const deleteOneFavourite = async (
   req: express.Request,
   res: express.Response
 ) => {
-  const { id } = req.params;
-  const result = await Favourites.deleteOne({ _id: id });
-
-  if (result.deletedCount === 1) {
-    res.status(200).json({ message: "Favourite deleted successfully" });
-  } else {
-    res.status(404).json({ error: "Favourite not found" });
-  }
-
   try {
-    // const getFavourites = await Favourites.find({ creater: id });
-    // res.status(201).json(getFavourites);
+    const { id } = req.params;
+    const result = await Favourites.deleteOne({ _id: id });
+
+    if (result.deletedCount === 1) {
+      res.status(200).json({ message: "Favourite deleted successfully" });
+    } else {
+      res.status(404).json({ error: "Favourite not found" });
+    }
   } catch (error: unknown) {
     let errorMessage = "Something went wrong";
     if (error instanceof Error) {

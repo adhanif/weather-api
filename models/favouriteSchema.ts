@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { IFavouriteCityWeather } from "../types";
 
+
 const favouriteCityWeatherSchema = new mongoose.Schema<IFavouriteCityWeather>({
   cityname: { type: String, required: true },
   creater: {
