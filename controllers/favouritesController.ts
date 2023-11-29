@@ -1,22 +1,27 @@
 import express from "express";
 import { Favourites } from "../models/favouriteSchema";
 
+// Favourites.collection.createIndexes({ cityname: "text" } as any);
+
 export const addFavourites = async (
   req: express.Request,
   res: express.Response
 ) => {
   try {
-    const { cityname } = req.body;
+    const { cityname, coordinates } = req.body;
     const { id } = (req as any).user;
 
-    // console.log(cityname, id);
     const alreadyFavourite = await Favourites.findOne({
-      cityname,
+      $text: { $search: `${cityname}` },
       creater: id,
     });
 
     if (!alreadyFavourite) {
-      const newFavourite = await Favourites.create({ cityname, creater: id });
+      const newFavourite = await Favourites.create({
+        cityname,
+        creater: id,
+        coordinates,
+      });
       res.status(200).json(newFavourite);
     } else {
       res

@@ -13,6 +13,7 @@ const favouriteCityWeatherSchema = new mongoose.Schema<IFavouriteCityWeather>({
   },
 });
 
+favouriteCityWeatherSchema.index({ cityname: "text" });
 export const Favourites = mongoose.model<IFavouriteCityWeather>(
   "City",
   favouriteCityWeatherSchema
