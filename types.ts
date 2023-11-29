@@ -8,5 +8,6 @@ export interface UserInterface {
 
 export interface IFavouriteCityWeather {
   cityname: string;
+  coordinates: number[];
   creater: Types.ObjectId | string;
 }
