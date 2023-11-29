@@ -1,9 +1,15 @@
 import express from "express";
 const favouritesRouter = express.Router();
-import { getFavourites } from "../controllers/favouritesController";
+import {
+  getFavouritesOfUser,
+  addFavourites,
+  deleteOneFavourite,
+} from "../controllers/favouritesController";
 
 import { verfiyToken } from "../middlewares/verifyToken";
 
-favouritesRouter.get("/favourites", verfiyToken, getFavourites);
+favouritesRouter.post("/", verfiyToken, addFavourites);
+favouritesRouter.get("/", verfiyToken, getFavouritesOfUser);
+favouritesRouter.delete("/:id", verfiyToken, deleteOneFavourite);
 
 export default favouritesRouter;

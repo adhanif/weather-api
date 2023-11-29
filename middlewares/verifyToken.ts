@@ -7,7 +7,7 @@ export const verfiyToken = async (
   next: NextFunction
 ) => {
   try {
-    const JWT_SECRET = process.env.SECTRET || "";
+    const JWT_SECRET = process.env.SECRET || "";
     const token = req.cookies.access_token;
     if (token) {
       const payload = jwt.verify(token, JWT_SECRET);
