@@ -2,25 +2,26 @@ import dotenv from "dotenv";
 
 require("./mongoDB");
 import express from "express";
-//import WebSocket from "ws";
-//import { createServer } from "http";
-//import { Server as WebSocketServer } from "ws";
-import favouritesRouter from "./routes/favourites";
+import favouritesRouter from "./routes/favouritesRoute";
+import cookieParser from "cookie-parser";
 import config from "./utils/config";
 //import authMiddleware from "./middlewares/authMiddleware";
-import cors from "cors";
 import { setupWebSocket } from "./webSocket";
 //import * as http from "http";
 //import jwt from "jsonwebtoken";
 //import * as url from "url";
-
 dotenv.config(); // Load environment variables from .env file
 const app = express();
+import cors from "cors";
+
 const corsOptions = {
-  origin: "*",
+  origin: "http://localhost:8081",
+  credentials: true,
 };
-app.use(cors(corsOptions));
+
 app.use(express.json());
+app.use(cors(corsOptions));
+app.use(cookieParser());
 
 //const JWT_SECRET = process.env.JWT_SECRET as string;
 
@@ -89,7 +90,7 @@ app.get("/", (_req, res) => {
   res.send("NodeJS + Express + Typescript App Up Weather app! 👍");
 });
 
-app.use("/api/favourites", favouritesRouter);
+app.use("/api/weather/favourites", favouritesRouter);
 
 const server = app.listen(config.PORT, () => {
   console.log(`Server running on port http://localhost:${config.PORT}`);
