@@ -1,11 +1,13 @@
 require("./mongoDB");
 import express from "express";
+import cors from "cors";
 import favouritesRouter from "./routes/favouritesRoute";
 import cookieParser from "cookie-parser";
 import config from "./utils/config";
 
 const app = express();
-const cors = require("cors");
+
+// const cors = require("cors");
 
 const corsOptions = {
   // origin: "http://localhost:8081",
