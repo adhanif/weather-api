@@ -1,17 +1,23 @@
 require("./mongoDB");
 import express from "express";
+import cors from "cors";
 import favouritesRouter from "./routes/favouritesRoute";
 import cookieParser from "cookie-parser";
 import config from "./utils/config";
 
 const app = express();
-const cors = require("cors");
+
+// const cors = require("cors");
 
 const corsOptions = {
-  // origin: "http://localhost:8081",
-  origin: "*",
+  origin: [
+    "http://localhost:8081",
+    "https://personal-weather-station.netlify.app",
+  ],
   credentials: true,
 };
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(cors(corsOptions));
