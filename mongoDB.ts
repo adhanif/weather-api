@@ -2,10 +2,7 @@ const mongoose = require("mongoose");
 import config from "./utils/config";
 
 mongoose
-  .connect(config.MONGODB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(config.MONGODB_URL)
   .then(() => {
     console.log("Successfully connect to MongoDB.");
   })
