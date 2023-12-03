@@ -2,9 +2,9 @@
   "name": "weather-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
-    "start": "node server.ts",
+    "start": "node build/server.ts",
     "dev": "ts-node-dev server.ts",
     "start:test": "set NODE_ENV=test && ts-node-dev server.ts",
     "tsc": "tsc"
