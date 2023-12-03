@@ -12,10 +12,13 @@ const config_1 = __importDefault(require("./utils/config"));
 const app = (0, express_1.default)();
 // const cors = require("cors");
 const corsOptions = {
-    // origin: "http://localhost:8081",
-    origin: "*",
+    origin: [
+        "http://localhost:8081",
+        "https://personal-weather-station.netlify.app",
+    ],
     credentials: true,
 };
+app.use((0, cors_1.default)(corsOptions));
 app.use(express_1.default.json());
 app.use((0, cors_1.default)(corsOptions));
 app.use((0, cookie_parser_1.default)());
@@ -26,3 +29,4 @@ app.use("/api/weather/favourites", favouritesRoute_1.default);
 app.listen(config_1.default.PORT, () => {
     console.log(`Server running on port http://localhost:${config_1.default.PORT}`);
 });
+//# sourceMappingURL=server.js.map
