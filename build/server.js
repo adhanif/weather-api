@@ -29,4 +29,3 @@ app.use("/api/weather/favourites", favouritesRoute_1.default);
 app.listen(config_1.default.PORT, () => {
     console.log(`Server running on port http://localhost:${config_1.default.PORT}`);
 });
-//# sourceMappingURL=server.js.map

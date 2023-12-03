@@ -11,4 +11,3 @@ favouritesRouter.post("/", verifyToken_1.verfiyToken, favouritesController_1.add
 favouritesRouter.get("/", verifyToken_1.verfiyToken, favouritesController_1.getFavouritesOfUser);
 favouritesRouter.delete("/:id", verifyToken_1.verfiyToken, favouritesController_1.deleteOneFavourite);
 exports.default = favouritesRouter;
-//# sourceMappingURL=favouritesRoute.js.map

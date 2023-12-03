@@ -10,4 +10,3 @@ const MONGODB_URL = process.env.NODE_ENV
     ? process.env.TEST_MONGODB_URL
     : process.env.DB_URL;
 exports.default = { PORT, MONGODB_URL };
-//# sourceMappingURL=config.js.map
