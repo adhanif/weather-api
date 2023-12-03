@@ -3,6 +3,7 @@
     "target": "ES6",
     "outDir": "./build/",
     "module": "commonjs",
+    "lib": ["es2021","es2017", "es7", "es6", "dom"],
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
