@@ -18,4 +18,3 @@ const favouriteCityWeatherSchema = new mongoose_1.default.Schema({
 });
 favouriteCityWeatherSchema.index({ cityname: "text" });
 exports.Favourites = mongoose_1.default.model("City", favouriteCityWeatherSchema);
-//# sourceMappingURL=favouriteSchema.js.map
