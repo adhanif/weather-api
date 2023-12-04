@@ -72,12 +72,13 @@ To integrate the backend with the frontend, make sure to configure the frontend 
 
 ## Configuration
 
-Ensure that your environment variables are set up for proper API functionality. Create a `.env` file in the root directory and add the following:
+1. Ensure that your environment variables are set up for proper API functionality. Create a `.env` file in the root directory and add the following:
 
-    ```env
-    PORT=8082
-    DB_URL=Your mongoDB
-    SECRET=Your secret key
+   ```bash
+   PORT=Your port
+   DB_URL=Your mongoDB
+   SECRET=Your secret key
+
 
 ## Dependencies
 
