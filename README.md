@@ -33,7 +33,9 @@ This project uses a separate authentication API (`auth-api`) to handle user auth
 
 ## Frontend Repository
 
-The frontend of the Personalized Weather Station is developed separately. You can find the code and details in the  [![Front-End Client](https://img.shields.io/badge/Client-181717?style=for-the-badge&logo=github&logoColor=white)]((https://github.com/husham007/personalized-weather-station.git))
+The frontend of the Personalized Weather Station is developed separately. You can find the code and details in the  following repo 
+
+[![My Weather Station](https://img.shields.io/badge/Github-repo-000000?style=for-the-badge&logo=google-chrome&logoColor=white)](https://github.com/husham007/personalized-weather-station.git)
 
 To integrate the backend with the frontend, make sure to configure the frontend to communicate with this API. Update the API endpoint in the frontend's `.env` file:
 
