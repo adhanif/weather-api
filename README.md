@@ -49,23 +49,30 @@ To integrate the backend with the frontend, make sure to configure the frontend 
 
    ```bash
    git clone https://github.com/adhanif/weather-api.git
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd weather-api
+
+   ```
    
-2. Install dependencies:
+3. Install dependencies:
 
    ```bash
    npm install
 
-3. Ensure that you have TypeScript and other required development dependencies installed:
+4. Ensure that you have TypeScript and other required development dependencies installed:
 
    ```bash
    npm install --save-dev typescript ts-node-dev @types/bcrypt @types/cors @types/jsonwebtoken @types/mongoose
 
-4. Build the TypeScript code:
+5. Build the TypeScript code:
 
    ```bash
    npm run build
 
-5. Start the development server:
+6. Start the development server:
 
    ```bash
    npm run dev
